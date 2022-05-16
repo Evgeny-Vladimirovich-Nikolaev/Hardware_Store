@@ -22,6 +22,6 @@ public class Accessory {
     private String code;
 
     @NotEmpty
-    private Integer name;
+    private String name;
 
 }
