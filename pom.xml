@@ -5,20 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.pro.java</groupId>
-    <artifactId>Java_Pro</artifactId>
+    <artifactId>Hardware_Store</artifactId>
     <version>1.0.0</version>
     <!--    <packaging>war</packaging>-->
-
-    <modules>
-        <module>aop</module>
-        <module>aopSetter</module>
-        <module>nosql</module>
-        <module>reactive</module>
-        <module>spring-data-rest</module>
-        <module>consoleApps</module>
-
-    </modules>
-
 
     <properties>
         <java.version>17</java.version>

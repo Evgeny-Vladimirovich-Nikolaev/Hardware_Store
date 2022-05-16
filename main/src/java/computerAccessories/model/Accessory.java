@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
+import java.math.BigDecimal;
 
 @Data
 @NoArgsConstructor
@@ -20,7 +21,7 @@ public class Accessory {
     @NotEmpty
     private String code;
 
-
     @NotEmpty
-    private String name;
+    private Integer name;
+
 }
