@@ -13,12 +13,16 @@ import java.util.stream.Collectors;
 @Mapper(componentModel = "spring")
 public interface AccessoryMapper {
 
+    @Mapping(target = "modelId", source = "entity.modelId")
     @Mapping(target = "code", source = "entity.code")
-    @Mapping(target = "name", source = "entity.name")
+    @Mapping(target = "description", source = "entity.description")
+    @Mapping(target = "price", source = "entity.price")
     AccessoryDto toDto(Accessory entity);
 
+    @Mapping(target = "modelId", source = "dto.modelId")
     @Mapping(target = "code", source = "dto.code")
-    @Mapping(target = "name", source = "dto.name")
+    @Mapping(target = "description", source = "dto.description")
+    @Mapping(target = "price", source = "dto.price")
     Accessory toEntity(AccessoryDto dto);
 
     default List<AccessoryDto> toDtos(List<Accessory> entities) {

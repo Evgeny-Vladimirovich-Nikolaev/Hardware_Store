@@ -11,61 +11,158 @@
             </not>
         </preConditions>
         <createTable tableName="computer_accessories">
-            <column name="code" type="VARCHAR(255)">
+
+            <column name="id" type="INTEGER">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
-            <column name="name" type="VARCHAR(255)">
+            <column name="modelId" type="VARCHAR(60)">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="code" type="VARCHAR(20)">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="description" type="VARCHAR(60)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="price" type="DECIMAL">
                 <constraints nullable="false"/>
             </column>
         </createTable>
     </changeSet>
     <changeSet id="init-1" author="Evgeny Nikolaev">
         <insert tableName="computer_accessories">
+            <column name="id" value="1">
+            </column>
+            <column name="modelId" value="C">
+            </column>
             <column name="code" value="CD-ROM">
             </column>
-            <column name="name" value="Compact Disc Read-Only Memory">
+            <column name="description" value="Compact Disc Read-Only Memory">
+            </column>
+            <column name="price" value="123">
             </column>
         </insert>
-    </changeSet>
-    <changeSet id="init-2" author="Evgeny Nikolaev">
         <insert tableName="computer_accessories">
-            <column name="code" value="CPU">
+            <column name="id" value="2">
             </column>
-            <column name="name" value="Central processing unit">
+            <column name="modelId" value="k7">
+            </column>
+            <column name="code" value="CD-ROM">
+            </column>
+            <column name="description" value="Compact Disc Read-Only Memory">
+            </column>
+            <column name="price" value="3555">
             </column>
         </insert>
-    </changeSet>
-    <changeSet id="init-3" author="Evgeny Nikolaev">
         <insert tableName="computer_accessories">
-            <column name="code" value="DDR">
+            <column name="id" value="3">
             </column>
-            <column name="name" value="Double Data Rate">
+            <column name="modelId" value="CD45">
+            </column>
+            <column name="code" value="CD-ROM">
+            </column>
+            <column name="description" value="Compact Disc Read-Only Memory">
+            </column>
+            <column name="price" value="3464">
             </column>
         </insert>
-    </changeSet>
-    <changeSet id="init-4" author="Evgeny Nikolaev">
         <insert tableName="computer_accessories">
-            <column name="code" value="DVD-ROM">
+            <column name="id" value="4">
             </column>
-            <column name="name" value="Digital Versatile Disc Read-Only Memory">
+            <column name="modelId" value="k9M">
+            </column>
+            <column name="code" value="CD-ROM">
+            </column>
+            <column name="description" value="Compact Disc Read-Only Memory">
+            </column>
+            <column name="price" value="775">
             </column>
         </insert>
-    </changeSet>
-    <changeSet id="init-5" author="Evgeny Nikolaev">
         <insert tableName="computer_accessories">
-            <column name="code" value="GDDR">
+            <column name="id" value="5">
             </column>
-            <column name="name" value="Graphics DDR">
+            <column name="modelId" value="CD-db">
+            </column>
+            <column name="code" value="CD-ROM">
+            </column>
+            <column name="description" value="Compact Disc Read-Only Memory">
+            </column>
+            <column name="price" value="4588">
             </column>
         </insert>
-    </changeSet>
-    <changeSet id="init-6" author="Evgeny Nikolaev">
         <insert tableName="computer_accessories">
-            <column name="code" value="HDD">
+            <column name="id" value="6">
             </column>
-            <column name="name" value="Hard disk drive">
+            <column name="modelId" value="vbm">
+            </column>
+            <column name="code" value="CD-ROM">
+            </column>
+            <column name="description" value="Compact Disc Read-Only Memory">
+            </column>
+            <column name="price" value="48866">
+            </column>
+        </insert>
+        <insert tableName="computer_accessories">
+            <column name="id" value="7">
+            </column>
+            <column name="modelId" value="vvvvv">
+            </column>
+            <column name="code" value="CD-vvvv">
+            </column>
+            <column name="description" value="Compact Disc Read-Only Memory">
+            </column>
+            <column name="price" value="36655">
+            </column>
+        </insert>
+        <insert tableName="computer_accessories">
+            <column name="id" value="8">
+            </column>
+            <column name="modelId" value="CD-dfROM">
+            </column>
+            <column name="code" value="C-ROM">
+            </column>
+            <column name="description" value="Compact Disc Read-Only Memory">
+            </column>
+            <column name="price" value="46">
+            </column>
+        </insert>
+        <insert tableName="computer_accessories">
+            <column name="id" value="9">
+            </column>
+            <column name="modelId" value="CD-R">
+            </column>
+            <column name="code" value="CD-ROM">
+            </column>
+            <column name="description" value="Compact Disc Read-Only Memory">
+            </column>
+            <column name="price" value="22556">
+            </column>
+        </insert>
+        <insert tableName="computer_accessories">
+            <column name="id" value="10">
+            </column>
+            <column name="modelId" value="dfhf">
+            </column>
+            <column name="code" value="CD-ROM">
+            </column>
+            <column name="description" value="Compact Disc Read-Only Memory">
+            </column>
+            <column name="price" value="47766">
+            </column>
+        </insert>
+        <insert tableName="computer_accessories">
+            <column name="id" value="11">
+            </column>
+            <column name="modelId" value="wege">
+            </column>
+            <column name="code" value="CD-ROM">
+            </column>
+            <column name="description" value="Compact Disc Read-Only Memory">
+            </column>
+            <column name="price" value="3869">
             </column>
         </insert>
     </changeSet>
+
 
 </databaseChangeLog>

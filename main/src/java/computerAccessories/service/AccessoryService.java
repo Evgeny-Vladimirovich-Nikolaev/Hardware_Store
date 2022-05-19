@@ -12,7 +12,7 @@ import java.util.Optional;
 public interface AccessoryService {
     List<AccessoryDto> findAll();
     AccessoryPageDto getPage(Pageable pageable);
-    Optional<AccessoryDto> getByCode(@NotEmpty String accessoryCode);
+    Optional<AccessoryDto> getByModelId(@NotEmpty String modelId);
     AccessoryDto save(@Valid AccessoryDto accessory);
-    void deleteByCode(@NotEmpty String accessoryCode);
+    void deleteByCode(@NotEmpty String modelId);
 }

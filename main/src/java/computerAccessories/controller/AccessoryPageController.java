@@ -11,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.constraints.Positive;
@@ -39,7 +38,7 @@ public class AccessoryPageController {
 
     @GetMapping("/accessory/edit")
     public String currentAccessory(@RequestParam("code") String accessoryCode, Model model) {
-        AccessoryDto currentAccessory = accessoryService.getByCode(accessoryCode)
+        AccessoryDto currentAccessory = accessoryService.getByModelId(accessoryCode)
                 .orElseThrow(() -> new IllegalArgumentException("Non existed accessory"));
         model.addAttribute("accessory", currentAccessory);
         return "accessory/accessory";
@@ -48,6 +47,7 @@ public class AccessoryPageController {
 
     @PostMapping("/accessory/save")
     public String saveAccessory(AccessoryDto accessory) {
+        System.out.println(accessory.getModelId());
         accessoryService.save(accessory);
         return "redirect:/accessories";
     }

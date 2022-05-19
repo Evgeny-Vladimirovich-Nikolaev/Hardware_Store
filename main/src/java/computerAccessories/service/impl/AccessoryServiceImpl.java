@@ -17,6 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Function;
 
 @Service
 @Slf4j
@@ -25,6 +26,7 @@ public class AccessoryServiceImpl implements AccessoryService {
 
     private final AccessoryRepository accessoryRepository;
     private final AccessoryMapper accessoryMapper;
+
     @Override
     @Transactional(readOnly = true)
     public List<AccessoryDto> findAll() {
@@ -43,21 +45,33 @@ public class AccessoryServiceImpl implements AccessoryService {
 
     @Override
     @Transactional(readOnly = true)
-    public Optional<AccessoryDto> getByCode(@NotEmpty String accessoryCode) {
-        return accessoryMapper.toOptionalDto(accessoryRepository.findById(accessoryCode));
+    public Optional<AccessoryDto> getByModelId(@NotEmpty String modelId) {
+        return accessoryMapper.toOptionalDto(
+                accessoryRepository.findByModelId(modelId));
     }
 
     @Override
     @Transactional
     public AccessoryDto save(@Valid AccessoryDto accessoryDto) {
-        return accessoryMapper.toDto(accessoryRepository.save(accessoryMapper.toEntity(accessoryDto)));
+        String modelId = accessoryDto.getModelId();
+        Accessory accessory = accessoryMapper.toEntity(accessoryDto);
+//        accessoryRepository.findByModelId(modelId).ifPresentOrElse(
+//                        a -> accessory.setId(a.getId()),
+//                        () -> accessory.setId(100));
+        accessory.setId(1000);
+        return accessoryMapper.toDto(accessoryRepository.save(accessory));
+    }
+
+    @Transactional
+    public Integer getNewId() {
+        return new Integer(1000);
     }
 
     @Override
     @Transactional
-    public void deleteByCode(@NotEmpty String accessoryCode) {
-        log.info("Удаляется элемент с кодом {}", accessoryCode);
-        accessoryRepository.deleteById(accessoryCode);
+    public void deleteByCode(@NotEmpty String modelId) {
+        log.info("Удаляется модель с кодом {}", modelId);
+        accessoryRepository.delete(accessoryRepository.findByModelId(modelId).orElseThrow());
     }
 }
 

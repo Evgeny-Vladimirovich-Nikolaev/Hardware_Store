@@ -4,9 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.math.BigDecimal;
 
@@ -18,10 +16,19 @@ import java.math.BigDecimal;
 public class Accessory {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Integer id;
+
+    @Column(unique = true)
+    @NotEmpty
+    private String modelId;
+
     @NotEmpty
     private String code;
 
     @NotEmpty
-    private String name;
+    private String description;
+
+    private BigDecimal price;
 
 }

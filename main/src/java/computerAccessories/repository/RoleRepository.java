@@ -5,7 +5,7 @@ import computerAccessories.model.Role;
 
 import java.util.List;
 
-public interface RoleReposotory extends JpaRepository<Role, Long> {
+public interface RoleRepository extends JpaRepository<Role, Long> {
 
     List<Role> findByName(String roleName);
 }

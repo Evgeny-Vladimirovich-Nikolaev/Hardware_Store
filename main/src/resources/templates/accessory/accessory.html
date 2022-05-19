@@ -10,13 +10,23 @@
     <p><strong>Add new accessory:</strong></p>
 
     <div class="row">
-        <label for="code-input">Code:</label>
-        <input id="code-input" name="code" type="text" required="required" maxlength="7"/>
+        <label for="code-input">Product code:</label>
+        <input id="code-input" name="code" type="text" required="required"/>
     </div>
 
     <div class="row">
-        <label for="name-input">Name:</label>
-        <input id="name-input" name="name" type="text" required="required" maxlength="120" />
+        <label for="model-input">Model:</label>
+        <input id="model-input" name="modelId" type="text" required="required"/>
+    </div>
+
+    <div class="row">
+        <label for="description-input">Description:</label>
+        <input id="description-input" name="description" type="text" required="required" value="1"/>
+    </div>
+
+    <div class="row">
+        <label for="price-input">Price:</label>
+        <input id="price-input" name="price" type="text" required="required" value="1"/>
     </div>
 
     <div class="row">
@@ -25,18 +35,28 @@
         <a th:href="@{/logout}"><img title="Escape" th:src="@{/images/blue_icons_24x24/escape.png}"/></a>
     </div>
 </form>
-<form id="edit-form" th:action="@{/accessory/save(code=${accessory.code})}" th:unless="${accessory == null}" method="post"
+<form id="edit-form" th:action="@{/accessory/save}" th:unless="${accessory == null}" method="post"
       action="accessory.html" th:object="${accessory}">
     <p><strong>Accessory Info:</strong></p>
 
     <div class="row">
-        <label for="code-input">Code:</label>
-        <input id="code-input" type="text" th:value="*{code}" readonly="readonly" value="1"/>
+        <label for="code-input">Product code:</label>
+        <input id="code-input" name="code" type="text" th:value="*{getCode()}" required="required"/>
     </div>
 
     <div class="row">
-        <label for="name-input">Name:</label>
-        <input id="name-input" name="name" type="text" th:value="*{name}" required="required" maxlength="120" value="Art"/>
+        <label for="model-input">Model:</label>
+        <input id="model-input" name="modelId" type="text" th:value="*{getModelId()}" required="required"/>
+    </div>
+
+    <div class="row">
+        <label for="description-input">Description:</label>
+        <input id="description-input" name="description" type="text" th:value="*{getDescription()}" required="required" value="1"/>
+    </div>
+
+    <div class="row">
+        <label for="price-input">Price:</label>
+        <input id="price-input" name="price" type="text" th:value="*{getPrice()}" required="required" value="1"/>
     </div>
 
     <div class="row">
