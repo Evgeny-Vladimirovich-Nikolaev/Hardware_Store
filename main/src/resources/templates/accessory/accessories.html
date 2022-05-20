@@ -11,11 +11,13 @@
                 let modelId = $(this).attr('name').replace('accessory_', '');
                 if (confirm('Are you sure to delete ' + modelId + '?')) {
                     $.ajax({
-                        url: '/accessories/' + modelId + '/',
+                        url: '/accessories/delete/' + modelId,
                         type: 'DELETE',
                         success: function (result) {
                             if (result.success) {
                                 location.href = '/accessories';
+                            } else {
+                                console.assert("denied this operation");
                             }
                         }
                     });
@@ -29,10 +31,13 @@
 <p><strong>Computer accessories</strong></p>
 </p>
 <div id="navigation">
-    <a th:if="${accessories.hasPrevious}" th:href="@{/accessories(page=${accessories.currentPage-1})}" href="accessories.html"><img
+    <a th:if="${accessories.hasPrevious}" th:href="@{/accessories(page=${accessories.currentPage-1})}"
+       href="accessories.html"><img
             alt="Previous page" th:src="@{/images/blue_icons_24x24/left.png}"/></a>
-    Current page <span th:text="${accessories.currentPage + 1}">0</span> of <span th:text="${accessories.totalPage}">2</span>
-    <a th:if="${accessories.hasNext}" th:href="@{/accessories(page=${accessories.currentPage + 1})}" href="accessories.html"><img
+    Current page <span th:text="${accessories.currentPage + 1}">0</span> of <span
+        th:text="${accessories.totalPage}">2</span>
+    <a th:if="${accessories.hasNext}" th:href="@{/accessories(page=${accessories.currentPage + 1})}"
+       href="accessories.html"><img
             alt="Next page" th:src="@{/images/blue_icons_24x24/right.png}"/></a>
 </div>
 </p>
@@ -43,6 +48,7 @@
         <th>Code</th>
         <th>Type</th>
         <th>Price</th>
+        <th>Info</th>
         <th>Actions</th>
     </tr>
     </thead>
@@ -53,9 +59,16 @@
         <td th:text="${accessory.getType()}">no data</td>
         <td th:text="${accessory.getPrice()}">no data</td>
         <td>
-            <a th:href="@{/accessory/edit(code=${accessory.getModelId()})}" href="accessory.html"><img alt="Edit"
-                                                                                                       th:src="@{/images/blue_icons_24x24/edit.png}"/></a>
-            <a id="delete-handler" th:id="${accessory.codeStr}" th:name="${accessory.codeStr}" href="computerHardware.html">
+            <a th:href="@{/accessory/info(code=${accessory.getModelId()})}" href="info.html">
+                <img alt="Info" th:src="@{/images/blue_icons_24x24/right.png}"/>
+            </a>
+        </td>
+        <td>
+            <a th:href="@{/accessory/edit(code=${accessory.getModelId()})}" href="accessory.html">
+                <img alt="Edit" th:src="@{/images/blue_icons_24x24/edit.png}"/>
+            </a>
+            <a id="delete-handler" th:id="${accessory.codeStr}" th:name="${accessory.codeStr}"
+               href="computerHardware.html">
                 <img alt="Delete" th:src="@{/images/blue_icons_24x24/trash.png}"/>
             </a>
         </td>

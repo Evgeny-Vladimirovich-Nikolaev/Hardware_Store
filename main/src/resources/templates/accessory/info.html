@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Info</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="/css/style.css"/>
+</head>
+<body>
+
+<form id="info-form" th:object="${accessory}">
+    <p><strong>Accessory Info:</strong></p>
+
+    <div class="row">
+        <label for="code-input">Product code:</label>
+        <input id="code-input" readonly="true" type="text" th:value="*{getCode()}" required="required"/>
+    </div>
+
+    <div class="row">
+        <label for="model-input">Model:</label>
+        <input id="model-input" readonly="true" type="text" th:value="*{getModelId()}" required="required"/>
+    </div>
+
+    <div class="row">
+        <label for="type-input">Type:</label>
+        <input id="type-input" readonly="true" type="text" th:value="*{getType()}" required="required" value="1"/>
+    </div>
+
+
+
+    <div class="row">
+        <label for="price-input">Price:</label>
+        <input id="price-input" readonly="true" type="text" th:value="*{getPrice()}" required="required" value="1"/>
+    </div>
+
+    <div class="row">
+        <label for="price-input">Desription:</label>
+        <input id="price-input" readonly="true" type="text" th:value="*{getDescription().getDescription()}" required="required" value="1"/>
+    </div>
+
+    <div class="row">
+        <a th:href="@{/accessories}" href="accessories.html"><img title="Back" th:src="@{/images/blue_icons_24x24/up.png}"/></a>
+    </div>
+</form>
+</body>
+</html>
+
