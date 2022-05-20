@@ -6,5 +6,6 @@
 
     <include file="computer_accessories.xml" relativeToChangelogFile="true"/>
     <include file="security.xml" relativeToChangelogFile="true"/>
+    <include file="descriptions.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

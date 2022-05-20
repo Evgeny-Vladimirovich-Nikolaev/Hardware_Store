@@ -2,12 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Add/Edit/View accessory</title>
+    <title>Add/Edit/View description</title>
     <link rel="stylesheet" th:href="@{/css/style.css}" href="/css/style.css"/>
 </head>
 <body>
-<form id="add-form" th:action="@{/accessory/save}" th:if="${accessory == null}" method="post" action="accessory.html">
-    <p><strong>Add new accessory:</strong></p>
+<form id="add-form" th:action="@{/description/save}" th:if="${description == null}" method="post" action="accessory.html">
+    <p><strong>Add description:</strong></p>
 
     <div class="row">
         <label for="code-input">Product code:</label>
@@ -27,11 +27,6 @@
     <div class="row">
         <label for="price-input">Price:</label>
         <input id="price-input" name="price" type="text" required="required" value="1"/>
-    </div>
-
-    <div class="row">
-        <label for="price-input">Description:</label>
-        <input id="price-input" name="descriptionString" type="text" required="required" value="1"/>
     </div>
 
     <div class="row">
@@ -59,16 +54,9 @@
         <input id="type-input" name="type" type="text" th:value="*{getType()}" required="required" value="1"/>
     </div>
 
-
-
     <div class="row">
         <label for="price-input">Price:</label>
         <input id="price-input" name="price" type="text" th:value="*{getPrice()}" required="required" value="1"/>
-    </div>
-
-    <div class="row">
-        <label for="price-input">Desription:</label>
-        <input id="price-input" name="descriptionString" type="text" th:value="*{getDescription().getDescription()}" required="required" value="1"/>
     </div>
 
     <div class="row">

@@ -17,7 +17,7 @@ public class Accessory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    Long id;
 
     @Column(unique = true)
     @NotEmpty
@@ -27,8 +27,11 @@ public class Accessory {
     private String code;
 
     @NotEmpty
-    private String description;
+    private String type;
 
     private BigDecimal price;
+
+    @OneToOne(mappedBy = "accessory", cascade = CascadeType.ALL)
+    private Description description;
 
 }

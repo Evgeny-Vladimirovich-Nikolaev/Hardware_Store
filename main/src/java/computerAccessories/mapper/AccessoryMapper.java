@@ -16,19 +16,21 @@ public interface AccessoryMapper {
 
     @Mapping(target = "modelId", source = "entity.modelId")
     @Mapping(target = "code", source = "entity.code")
-    @Mapping(target = "description", source = "entity.description")
+    @Mapping(target = "type", source = "entity.type")
     @Mapping(target = "price", source = "entity.price")
+    @Mapping(target = "description", source = "entity.description")
     AccessoryDto toDto(Accessory entity);
 
     @Mapping(target = "modelId", source = "dto.modelId")
     @Mapping(target = "code", source = "dto.code")
-    @Mapping(target = "description", source = "dto.description")
+    @Mapping(target = "type", source = "dto.type")
     @Mapping(target = "price", source = "dto.price")
+    @Mapping(target = "description", source = "dto.description")
     Accessory toEntity(AccessoryDto dto);
 
     @Mapping(target = "accessory.modelId", source = "dto.modelId")
     @Mapping(target = "accessory.code", source = "dto.code")
-    @Mapping(target = "accessory.description", source = "dto.description")
+    @Mapping(target = "accessory.type", source = "dto.type")
     @Mapping(target = "accessory.price", source = "dto.price")
     void update(@MappingTarget Accessory accessory, AccessoryDto dto);
 

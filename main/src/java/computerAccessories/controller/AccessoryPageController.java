@@ -47,7 +47,6 @@ public class AccessoryPageController {
 
     @PostMapping("/accessory/save")
     public String saveAccessory(AccessoryDto accessory) {
-        System.out.println(accessory.getModelId());
         accessoryService.save(accessory);
         return "redirect:/accessories";
     }

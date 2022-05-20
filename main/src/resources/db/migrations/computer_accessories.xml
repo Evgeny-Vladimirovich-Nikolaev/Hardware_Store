@@ -11,7 +11,7 @@
             </not>
         </preConditions>
         <createTable tableName="computer_accessories">
-            <column autoIncrement="true" name="id" type="INTEGER">
+            <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="modelId" type="VARCHAR(60)">
@@ -20,7 +20,7 @@
             <column name="code" type="VARCHAR(20)">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
-            <column name="description" type="VARCHAR(60)">
+            <column name="type" type="VARCHAR(60)">
                 <constraints nullable="false"/>
             </column>
             <column name="price" type="DECIMAL">
@@ -36,7 +36,7 @@
             </column>
             <column name="code" value="CD-ROM">
             </column>
-            <column name="description" value="Compact Disc Read-Only Memory">
+            <column name="type" value="Compact Disc Read-Only Memory">
             </column>
             <column name="price" value="123">
             </column>
@@ -44,123 +44,28 @@
         <insert tableName="computer_accessories">
             <column name="id" value="2">
             </column>
-            <column name="modelId" value="k7">
+            <column name="modelId" value="d">
             </column>
             <column name="code" value="CD-ROM">
             </column>
-            <column name="description" value="Compact Disc Read-Only Memory">
+            <column name="type" value="Compact Disc Read-Only Memory">
             </column>
-            <column name="price" value="3555">
+            <column name="price" value="123">
             </column>
         </insert>
         <insert tableName="computer_accessories">
             <column name="id" value="3">
             </column>
-            <column name="modelId" value="CD45">
+            <column name="modelId" value="e">
             </column>
             <column name="code" value="CD-ROM">
             </column>
-            <column name="description" value="Compact Disc Read-Only Memory">
+            <column name="type" value="Compact Disc Read-Only Memory">
             </column>
-            <column name="price" value="3464">
-            </column>
-        </insert>
-        <insert tableName="computer_accessories">
-            <column name="id" value="4">
-            </column>
-            <column name="modelId" value="k9M">
-            </column>
-            <column name="code" value="CD-ROM">
-            </column>
-            <column name="description" value="Compact Disc Read-Only Memory">
-            </column>
-            <column name="price" value="775">
+            <column name="price" value="123">
             </column>
         </insert>
-        <insert tableName="computer_accessories">
-            <column name="id" value="5">
-            </column>
-            <column name="modelId" value="CD-db">
-            </column>
-            <column name="code" value="CD-ROM">
-            </column>
-            <column name="description" value="Compact Disc Read-Only Memory">
-            </column>
-            <column name="price" value="4588">
-            </column>
-        </insert>
-        <insert tableName="computer_accessories">
-            <column name="id" value="6">
-            </column>
-            <column name="modelId" value="vbm">
-            </column>
-            <column name="code" value="CD-ROM">
-            </column>
-            <column name="description" value="Compact Disc Read-Only Memory">
-            </column>
-            <column name="price" value="48866">
-            </column>
-        </insert>
-        <insert tableName="computer_accessories">
-            <column name="id" value="7">
-            </column>
-            <column name="modelId" value="vvvvv">
-            </column>
-            <column name="code" value="CD-vvvv">
-            </column>
-            <column name="description" value="Compact Disc Read-Only Memory">
-            </column>
-            <column name="price" value="36655">
-            </column>
-        </insert>
-        <insert tableName="computer_accessories">
-            <column name="id" value="8">
-            </column>
-            <column name="modelId" value="CD-dfROM">
-            </column>
-            <column name="code" value="C-ROM">
-            </column>
-            <column name="description" value="Compact Disc Read-Only Memory">
-            </column>
-            <column name="price" value="46">
-            </column>
-        </insert>
-        <insert tableName="computer_accessories">
-            <column name="id" value="9">
-            </column>
-            <column name="modelId" value="CD-R">
-            </column>
-            <column name="code" value="CD-ROM">
-            </column>
-            <column name="description" value="Compact Disc Read-Only Memory">
-            </column>
-            <column name="price" value="22556">
-            </column>
-        </insert>
-        <insert tableName="computer_accessories">
-            <column name="id" value="10">
-            </column>
-            <column name="modelId" value="dfhf">
-            </column>
-            <column name="code" value="CD-ROM">
-            </column>
-            <column name="description" value="Compact Disc Read-Only Memory">
-            </column>
-            <column name="price" value="47766">
-            </column>
-        </insert>
-        <insert tableName="computer_accessories">
-            <column name="id" value="11">
-            </column>
-            <column name="modelId" value="wege">
-            </column>
-            <column name="code" value="CD-ROM">
-            </column>
-            <column name="description" value="Compact Disc Read-Only Memory">
-            </column>
-            <column name="price" value="3869">
-            </column>
-        </insert>
+
     </changeSet>
 
 

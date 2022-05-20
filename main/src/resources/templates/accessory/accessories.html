@@ -41,7 +41,7 @@
     <tr>
         <th>Model</th>
         <th>Code</th>
-        <th>Description</th>
+        <th>Type</th>
         <th>Price</th>
         <th>Actions</th>
     </tr>
@@ -50,7 +50,7 @@
     <tr th:each="accessory: ${accessories.data}">
         <td th:text="${accessory.getModelId()}">no data</td>
         <td th:text="${accessory.getCode()}">no data</td>
-        <td th:text="${accessory.getDescription()}">no data</td>
+        <td th:text="${accessory.getType()}">no data</td>
         <td th:text="${accessory.getPrice()}">no data</td>
         <td>
             <a th:href="@{/accessory/edit(code=${accessory.getModelId()})}" href="accessory.html"><img alt="Edit"

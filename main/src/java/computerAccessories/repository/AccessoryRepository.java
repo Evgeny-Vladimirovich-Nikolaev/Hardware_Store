@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.Optional;
 
-public interface AccessoryRepository extends JpaRepository<Accessory, String> {
+public interface AccessoryRepository extends JpaRepository<Accessory, Long> {
 
     @Query("select a from Accessory a where a.modelId = :modelId")
     Optional<Accessory> findByModelId(String modelId);
