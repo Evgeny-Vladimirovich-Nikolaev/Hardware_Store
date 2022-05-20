@@ -11,8 +11,7 @@
             </not>
         </preConditions>
         <createTable tableName="computer_accessories">
-
-            <column name="id" type="INTEGER">
+            <column autoIncrement="true" name="id" type="INTEGER">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="modelId" type="VARCHAR(60)">

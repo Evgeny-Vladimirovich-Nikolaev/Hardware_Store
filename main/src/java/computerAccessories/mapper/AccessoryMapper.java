@@ -4,6 +4,7 @@ import computerAccessories.dto.AccessoryDto;
 import computerAccessories.model.Accessory;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 
 import java.util.List;
 import java.util.Optional;
@@ -24,6 +25,12 @@ public interface AccessoryMapper {
     @Mapping(target = "description", source = "dto.description")
     @Mapping(target = "price", source = "dto.price")
     Accessory toEntity(AccessoryDto dto);
+
+    @Mapping(target = "accessory.modelId", source = "dto.modelId")
+    @Mapping(target = "accessory.code", source = "dto.code")
+    @Mapping(target = "accessory.description", source = "dto.description")
+    @Mapping(target = "accessory.price", source = "dto.price")
+    void update(@MappingTarget Accessory accessory, AccessoryDto dto);
 
     default List<AccessoryDto> toDtos(List<Accessory> entities) {
         return entities.stream().map(this::toDto).collect(Collectors.toList());

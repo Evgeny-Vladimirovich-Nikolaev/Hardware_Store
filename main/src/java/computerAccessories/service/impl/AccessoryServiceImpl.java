@@ -55,16 +55,9 @@ public class AccessoryServiceImpl implements AccessoryService {
     public AccessoryDto save(@Valid AccessoryDto accessoryDto) {
         String modelId = accessoryDto.getModelId();
         Accessory accessory = accessoryMapper.toEntity(accessoryDto);
-//        accessoryRepository.findByModelId(modelId).ifPresentOrElse(
-//                        a -> accessory.setId(a.getId()),
-//                        () -> accessory.setId(100));
-        accessory.setId(1000);
+        accessoryRepository.findByModelId(modelId).ifPresent(
+                        a -> accessory.setId(a.getId()));
         return accessoryMapper.toDto(accessoryRepository.save(accessory));
-    }
-
-    @Transactional
-    public Integer getNewId() {
-        return new Integer(1000);
     }
 
     @Override
