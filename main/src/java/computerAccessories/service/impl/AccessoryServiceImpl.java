@@ -11,7 +11,6 @@ import computerAccessories.repository.DescriptionRepository;
 import computerAccessories.service.AccessoryService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import lombok.val;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -43,6 +42,26 @@ public class AccessoryServiceImpl implements AccessoryService {
     @Override
     public AccessoryPageDto getPage(Pageable pageable) {
         Page<Accessory> currentPage = accessoryRepository.findAll(pageable);
+        return new AccessoryPageDto(accessoryMapper.toDtos(currentPage.getContent()),
+                currentPage.getNumber(),
+                currentPage.getTotalPages(),
+                currentPage.hasNext(),
+                currentPage.hasPrevious());
+    }
+
+    @Override
+    public AccessoryPageDto getPage(Pageable pageable, String type) {
+        Page<Accessory> currentPage = accessoryRepository.findAllByType(pageable, type);
+        return new AccessoryPageDto(accessoryMapper.toDtos(currentPage.getContent()),
+                currentPage.getNumber(),
+                currentPage.getTotalPages(),
+                currentPage.hasNext(),
+                currentPage.hasPrevious());
+    }
+
+    @Override
+    public AccessoryPageDto getPage(Pageable pageable, String type, String vendor) {
+        Page<Accessory> currentPage = accessoryRepository.findAllByTypeAndVendor(pageable, type, vendor);
         return new AccessoryPageDto(accessoryMapper.toDtos(currentPage.getContent()),
                 currentPage.getNumber(),
                 currentPage.getTotalPages(),

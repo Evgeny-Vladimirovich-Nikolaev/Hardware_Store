@@ -12,6 +12,10 @@ import java.util.Optional;
 public interface AccessoryService {
     List<AccessoryDto> findAll();
     AccessoryPageDto getPage(Pageable pageable);
+
+    AccessoryPageDto getPage(Pageable pageable, String type);
+
+    AccessoryPageDto getPage(Pageable pageable, String type, String vendor);
     Optional<AccessoryDto> getByModelId(@NotEmpty String modelId);
     AccessoryDto save(@Valid AccessoryDto accessory);
     void deleteByCode(@NotEmpty String modelId);

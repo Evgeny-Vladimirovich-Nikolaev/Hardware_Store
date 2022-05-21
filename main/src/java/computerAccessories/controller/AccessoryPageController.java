@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import javax.validation.constraints.Positive;
@@ -26,6 +27,27 @@ public class AccessoryPageController {
                         @PositiveOrZero(originValue = 15) @RequestParam(required = false, defaultValue = "0") Integer page,
                         @Positive @RequestParam(required = false, defaultValue = "5") Integer size) {
         AccessoryPageDto allAccessories = accessoryService.getPage(PageRequest.of(page, size));
+        model.addAttribute("accessories", allAccessories);
+        return "accessory/accessories";
+    }
+
+    @GetMapping("/accessories/{type}")
+    public String findByType(Model model,
+                             @PositiveOrZero(originValue = 15) @RequestParam(required = false, defaultValue = "0") Integer page,
+                             @Positive @RequestParam(required = false, defaultValue = "5") Integer size,
+                             @PathVariable("type") String type) {
+        AccessoryPageDto allAccessories = accessoryService.getPage(PageRequest.of(page, size), type);
+        model.addAttribute("accessories", allAccessories);
+        return "accessory/accessories";
+    }
+
+    @GetMapping("/accessories/{type}/{vendor}")
+    public String findByTypeAndVenfor(Model model,
+                             @PositiveOrZero(originValue = 15) @RequestParam(required = false, defaultValue = "0") Integer page,
+                             @Positive @RequestParam(required = false, defaultValue = "5") Integer size,
+                             @PathVariable("type") String type,
+                             @PathVariable("vendor") String vendor) {
+        AccessoryPageDto allAccessories = accessoryService.getPage(PageRequest.of(page, size), type, vendor);
         model.addAttribute("accessories", allAccessories);
         return "accessory/accessories";
     }

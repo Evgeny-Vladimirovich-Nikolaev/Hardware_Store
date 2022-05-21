@@ -1,0 +1,9 @@
+GET http://localhost:8080/accessories
+
+GET http://localhost:8080/accessories/MotherBoard
+
+GET http://localhost:8080/accessories/CPU/AMD
+
+GET http://localhost:8080/accessory/add
+
+GET http://localhost:8080/accessory/info/?code=Intel Core i5-10400F BOX

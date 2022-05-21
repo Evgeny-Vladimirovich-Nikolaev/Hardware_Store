@@ -10,7 +10,7 @@
     <p><strong>Add new accessory:</strong></p>
 
     <div class="row">
-        <label for="code-input">Product code:</label>
+        <label for="code-input">Vendor:</label>
         <input id="code-input" name="code" type="text" required="required"/>
     </div>
 
@@ -35,8 +35,9 @@
     </div>
 
     <div class="row">
-        <a th:href="@{/accessories}" href="accessories.html"><img title="Back" th:src="@{/images/blue_icons_24x24/up.png}"/></a>
-        <button ><img title="Save" th:src="@{/images/blue_icons_24x24/save.png}"/></button>
+        <a th:href="@{/accessories}" href="accessories.html"><img title="Back"
+                                                                  th:src="@{/images/blue_icons_24x24/up.png}"/></a>
+        <button><img title="Save" th:src="@{/images/blue_icons_24x24/save.png}"/></button>
         <a th:href="@{/logout}"><img title="Escape" th:src="@{/images/blue_icons_24x24/escape.png}"/></a>
     </div>
 </form>
@@ -45,7 +46,7 @@
     <p><strong>Accessory Info:</strong></p>
 
     <div class="row">
-        <label for="code-input">Product code:</label>
+        <label for="code-input">Vendor:</label>
         <input id="code-input" name="code" type="text" th:value="*{getCode()}" required="required"/>
     </div>
 
@@ -58,9 +59,6 @@
         <label for="type-input">Type:</label>
         <input id="type-input" name="type" type="text" th:value="*{getType()}" required="required" value="1"/>
     </div>
-
-
-
     <div class="row">
         <label for="price-input">Price:</label>
         <input id="price-input" name="price" type="text" th:value="*{getPrice()}" required="required" value="1"/>
@@ -68,12 +66,17 @@
 
     <div class="row">
         <label for="price-input">Desription:</label>
-        <input id="price-input" name="descriptionString" type="text" th:value="*{getDescription().getDescription()}" required="required" value="1"/>
+        <input id="price-input" name="descriptionString" type="text"
+               th:value="*{getDescription().getDescription()}" required="required" value="1"/>
     </div>
 
     <div class="row">
-        <a th:href="@{/accessories}" href="accessories.html"><img title="Back" th:src="@{/images/blue_icons_24x24/up.png}"/></a>
-        <button type="submit"><img title="Save" th:src="@{/images/blue_icons_24x24/save.png}"/></button>
+        <a th:href="@{/accessories}" href="accessories.html">
+            <img title="Back" th:src="@{/images/blue_icons_24x24/up.png}"/>
+        </a>
+        <button type="submit">
+            <img title="Save" th:src="@{/images/blue_icons_24x24/save.png}"/>
+        </button>
     </div>
 </form>
 </body>
