@@ -1,7 +1,6 @@
 package computerAccessories.dto;
 
 import lombok.Data;
-
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -10,11 +9,11 @@ import java.math.BigDecimal;
 @Data
 public class AccessoryDto {
 
-    @Id
+    @NotNull
     private String modelId;
 
     @NotNull
-    @Size(min = 1, max = 7)
+    @Size(min = 1, max = 16)
     private String code;
 
     @NotNull
@@ -38,4 +37,5 @@ public class AccessoryDto {
     public void writeDescription(String d) {
         description.setDescription(d);
     }
+
 }

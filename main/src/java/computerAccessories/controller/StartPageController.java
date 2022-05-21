@@ -12,5 +12,6 @@ public class StartPageController {
     public String index() {
         return "index";
     }
+
 }
 

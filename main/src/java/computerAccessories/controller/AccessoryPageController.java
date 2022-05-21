@@ -12,7 +12,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import javax.validation.constraints.Positive;
 
 @Controller
@@ -59,4 +58,5 @@ public class AccessoryPageController {
         accessoryService.save(accessory);
         return "redirect:/accessories";
     }
+
 }

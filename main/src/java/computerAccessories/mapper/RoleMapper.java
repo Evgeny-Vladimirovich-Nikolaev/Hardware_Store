@@ -4,7 +4,6 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import computerAccessories.dto.RoleDto;
 import computerAccessories.model.Role;
-
 import java.util.List;
 import java.util.stream.Collectors;
 

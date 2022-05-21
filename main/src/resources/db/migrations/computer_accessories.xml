@@ -15,12 +15,12 @@
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="modelId" type="VARCHAR(60)">
-                <constraints nullable="false" primaryKey="true"/>
+                <constraints nullable="false" unique="true"/>
             </column>
-            <column name="code" type="VARCHAR(20)">
-                <constraints nullable="false" primaryKey="true"/>
+            <column name="code" type="VARCHAR(30)">
+                <constraints nullable="false"/>
             </column>
-            <column name="type" type="VARCHAR(60)">
+            <column name="type" type="VARCHAR(20)">
                 <constraints nullable="false"/>
             </column>
             <column name="price" type="DECIMAL">
@@ -32,40 +32,183 @@
         <insert tableName="computer_accessories">
             <column name="id" value="1">
             </column>
-            <column name="modelId" value="C">
+            <column name="modelId" value="MSI B450M-A PRO MAX">
             </column>
-            <column name="code" value="CD-ROM">
+            <column name="type" value="MotherBoard">
             </column>
-            <column name="type" value="Compact Disc Read-Only Memory">
+            <column name="code" value="MSI">
             </column>
-            <column name="price" value="123">
+            <column name="price" value="3899">
             </column>
         </insert>
         <insert tableName="computer_accessories">
             <column name="id" value="2">
             </column>
-            <column name="modelId" value="d">
+            <column name="modelId" value="AMD PRO A6-8580 OEM">
             </column>
-            <column name="code" value="CD-ROM">
+            <column name="type" value="CPU Processor">
             </column>
-            <column name="type" value="Compact Disc Read-Only Memory">
+            <column name="code" value="AMD">
             </column>
-            <column name="price" value="123">
+            <column name="price" value="3699">
             </column>
         </insert>
         <insert tableName="computer_accessories">
             <column name="id" value="3">
             </column>
-            <column name="modelId" value="e">
+            <column name="modelId" value="Patriot Signature [PSD34G160081]">
             </column>
-            <column name="code" value="CD-ROM">
+            <column name="type" value="Memory">
             </column>
-            <column name="type" value="Compact Disc Read-Only Memory">
+            <column name="code" value="Patriot">
             </column>
-            <column name="price" value="123">
+            <column name="price" value="1599">
             </column>
         </insert>
-
+        <insert tableName="computer_accessories">
+            <column name="id" value="4">
+            </column>
+            <column name="modelId" value="GIGABYTE H510M S2H">
+            </column>
+            <column name="type" value="MotherBoard">
+            </column>
+            <column name="code" value="GIGABYTE">
+            </column>
+            <column name="price" value="5199">
+            </column>
+        </insert>
+        <insert tableName="computer_accessories">
+            <column name="id" value="5">
+            </column>
+            <column name="modelId" value="Intel Core i5-10400F BOX">
+            </column>
+            <column name="type" value="CPU Processor">
+            </column>
+            <column name="code" value="Intel">
+            </column>
+            <column name="price" value="12799">
+            </column>
+        </insert>
+        <insert tableName="computer_accessories">
+            <column name="id" value="6">
+            </column>
+            <column name="modelId" value="Kingston [KVR16N11S8/4WP]">
+            </column>
+            <column name="type" value="Memory">
+            </column>
+            <column name="code" value="Kingston">
+            </column>
+            <column name="price" value="2299">
+            </column>
+        </insert>
+        <insert tableName="computer_accessories">
+            <column name="id" value="7">
+            </column>
+            <column name="modelId" value="ASUS PRIME H510M-A">
+            </column>
+            <column name="type" value="MotherBoard">
+            </column>
+            <column name="code" value="ASUS">
+            </column>
+            <column name="price" value="6799">
+            </column>
+        </insert>
+        <insert tableName="computer_accessories">
+            <column name="id" value="8">
+            </column>
+            <column name="modelId" value="Intel Core i5-12400F BOX">
+            </column>
+            <column name="type" value="CPU Processor">
+            </column>
+            <column name="code" value="Intel">
+            </column>
+            <column name="price" value="17299">
+            </column>
+        </insert>
+        <insert tableName="computer_accessories">
+            <column name="id" value="9">
+            </column>
+            <column name="modelId" value="Radeon R7 Performance Series RGB [R7S48G2606U2S-RGB]">
+            </column>
+            <column name="type" value="Memory">
+            </column>
+            <column name="code" value="AMD">
+            </column>
+            <column name="price" value="2799">
+            </column>
+        </insert>
+        <insert tableName="computer_accessories">
+            <column name="id" value="10">
+            </column>
+            <column name="modelId" value="GIGABYTE B550M AORUS ELITE">
+            </column>
+            <column name="type" value="MotherBoard">
+            </column>
+            <column name="code" value="GIGABYTE">
+            </column>
+            <column name="price" value="8999">
+            </column>
+        </insert>
+        <insert tableName="computer_accessories">
+            <column name="id" value="11">
+            </column>
+            <column name="modelId" value="AMD Ryzen 5 5600 BOX">
+            </column>
+            <column name="type" value="CPU Processor">
+            </column>
+            <column name="code" value="AMD">
+            </column>
+            <column name="price" value="25599">
+            </column>
+        </insert>
+        <insert tableName="computer_accessories">
+            <column name="id" value="12">
+            </column>
+            <column name="modelId" value="Samsung [M378A2K43DB1-CVF]">
+            </column>
+            <column name="type" value="Memory">
+            </column>
+            <column name="code" value="Samsung">
+            </column>
+            <column name="price" value="5199">
+            </column>
+        </insert>
+        <insert tableName="computer_accessories">
+            <column name="id" value="13">
+            </column>
+            <column name="modelId" value="MSI MAG B550M MORTAR WIFI">
+            </column>
+            <column name="type" value="MotherBoard">
+            </column>
+            <column name="code" value="MSI">
+            </column>
+            <column name="price" value="13499">
+            </column>
+        </insert>
+        <insert tableName="computer_accessories">
+            <column name="id" value="14">
+            </column>
+            <column name="modelId" value="Intel Core i9-11900KF BOX">
+            </column>
+            <column name="type" value="CPU Processor">
+            </column>
+            <column name="code" value="Intel">
+            </column>
+            <column name="price" value="38999">
+            </column>
+        </insert>
+        <insert tableName="computer_accessories">
+            <column name="id" value="15">
+            </column>
+            <column name="modelId" value="A-Data XPG GAMMIX D45 [AX4U36008G18I-DCBKD45]">
+            </column>
+            <column name="type" value="Memory">
+            </column>
+            <column name="code" value="A-Data">
+            </column>
+            <column name="price" value="74999">
+            </column>
+        </insert>
     </changeSet>
 
 

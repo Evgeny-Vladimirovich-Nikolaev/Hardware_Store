@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-05-20T19:49:46+0300",
+    date = "2022-05-21T17:14:55+0300",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 17.0.2 (Oracle Corporation)"
 )
 @Component
@@ -49,27 +49,6 @@ public class AccessoryMapperImpl implements AccessoryMapper {
         return accessory;
     }
 
-    @Override
-    public void update(Accessory accessory, AccessoryDto dto) {
-        if ( dto == null ) {
-            return;
-        }
-
-        accessory.setModelId( dto.getModelId() );
-        accessory.setCode( dto.getCode() );
-        accessory.setType( dto.getType() );
-        accessory.setPrice( dto.getPrice() );
-        if ( dto.getDescription() != null ) {
-            if ( accessory.getDescription() == null ) {
-                accessory.setDescription( new Description() );
-            }
-            descriptionDtoToDescription1( dto.getDescription(), accessory.getDescription() );
-        }
-        else {
-            accessory.setDescription( null );
-        }
-    }
-
     protected DescriptionDto descriptionToDescriptionDto(Description description) {
         if ( description == null ) {
             return null;
@@ -94,14 +73,5 @@ public class AccessoryMapperImpl implements AccessoryMapper {
         description.setDescription( descriptionDto.getDescription() );
 
         return description;
-    }
-
-    protected void descriptionDtoToDescription1(DescriptionDto descriptionDto, Description mappingTarget) {
-        if ( descriptionDto == null ) {
-            return;
-        }
-
-        mappingTarget.setId( descriptionDto.getId() );
-        mappingTarget.setDescription( descriptionDto.getDescription() );
     }
 }
