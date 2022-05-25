@@ -1,6 +1,5 @@
 package computerAccessories.repository;
 
-import computerAccessories.dto.AccessoryPageDto;
 import computerAccessories.model.Accessory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,6 +11,7 @@ public interface AccessoryRepository extends JpaRepository<Accessory, Long> {
 
     @Query("select a from Accessory a where a.modelId = :modelId")
     Optional<Accessory> findByModelId(String modelId);
+
     @Query("select a from Accessory a where a.type = :type")
     Page<Accessory> findAllByType(Pageable pageable, String type);
 

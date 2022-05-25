@@ -6,7 +6,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import computerAccessories.model.User;
 import computerAccessories.model.type.Status;
-
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -52,4 +51,5 @@ public class UserPrincipal implements UserDetails {
     public boolean isEnabled() {
         return Status.OK.equals(user.getStatus());
     }
+
 }

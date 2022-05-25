@@ -4,13 +4,13 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
-    <changeSet id="Create-table-computer_accessories" author="Evgeny Nikolaev">
+    <changeSet id="Create-table-hardware_catalogue" author="Evgeny Nikolaev">
         <preConditions>
             <not>
-                <tableExists tableName="computer_accessories"/>
+                <tableExists tableName="hardware_catalogue"/>
             </not>
         </preConditions>
-        <createTable tableName="computer_accessories">
+        <createTable tableName="hardware_catalogue">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
@@ -29,7 +29,7 @@
         </createTable>
     </changeSet>
     <changeSet id="init-1" author="Evgeny Nikolaev">
-        <insert tableName="computer_accessories">
+        <insert tableName="hardware_catalogue">
             <column name="id" value="1">
             </column>
             <column name="modelId" value="MSI B450M-A PRO MAX">
@@ -41,7 +41,7 @@
             <column name="price" value="3899">
             </column>
         </insert>
-        <insert tableName="computer_accessories">
+        <insert tableName="hardware_catalogue">
             <column name="id" value="2">
             </column>
             <column name="modelId" value="AMD PRO A6-8580 OEM">
@@ -53,7 +53,7 @@
             <column name="price" value="3699">
             </column>
         </insert>
-        <insert tableName="computer_accessories">
+        <insert tableName="hardware_catalogue">
             <column name="id" value="3">
             </column>
             <column name="modelId" value="Patriot Signature [PSD34G160081]">
@@ -65,7 +65,7 @@
             <column name="price" value="1599">
             </column>
         </insert>
-        <insert tableName="computer_accessories">
+        <insert tableName="hardware_catalogue">
             <column name="id" value="4">
             </column>
             <column name="modelId" value="GIGABYTE H510M S2H">
@@ -77,7 +77,7 @@
             <column name="price" value="5199">
             </column>
         </insert>
-        <insert tableName="computer_accessories">
+        <insert tableName="hardware_catalogue">
             <column name="id" value="5">
             </column>
             <column name="modelId" value="Intel Core i5-10400F BOX">
@@ -89,7 +89,7 @@
             <column name="price" value="12799">
             </column>
         </insert>
-        <insert tableName="computer_accessories">
+        <insert tableName="hardware_catalogue">
             <column name="id" value="6">
             </column>
             <column name="modelId" value="Kingston [KVR16N11S8/4WP]">
@@ -101,7 +101,7 @@
             <column name="price" value="2299">
             </column>
         </insert>
-        <insert tableName="computer_accessories">
+        <insert tableName="hardware_catalogue">
             <column name="id" value="7">
             </column>
             <column name="modelId" value="ASUS PRIME H510M-A">
@@ -113,7 +113,7 @@
             <column name="price" value="6799">
             </column>
         </insert>
-        <insert tableName="computer_accessories">
+        <insert tableName="hardware_catalogue">
             <column name="id" value="8">
             </column>
             <column name="modelId" value="Intel Core i5-12400F BOX">
@@ -125,7 +125,7 @@
             <column name="price" value="17299">
             </column>
         </insert>
-        <insert tableName="computer_accessories">
+        <insert tableName="hardware_catalogue">
             <column name="id" value="9">
             </column>
             <column name="modelId" value="Radeon R7 Performance Series RGB [R7S48G2606U2S-RGB]">
@@ -137,7 +137,7 @@
             <column name="price" value="2799">
             </column>
         </insert>
-        <insert tableName="computer_accessories">
+        <insert tableName="hardware_catalogue">
             <column name="id" value="10">
             </column>
             <column name="modelId" value="GIGABYTE B550M AORUS ELITE">
@@ -149,7 +149,7 @@
             <column name="price" value="8999">
             </column>
         </insert>
-        <insert tableName="computer_accessories">
+        <insert tableName="hardware_catalogue">
             <column name="id" value="11">
             </column>
             <column name="modelId" value="AMD Ryzen 5 5600 BOX">
@@ -161,7 +161,7 @@
             <column name="price" value="25599">
             </column>
         </insert>
-        <insert tableName="computer_accessories">
+        <insert tableName="hardware_catalogue">
             <column name="id" value="12">
             </column>
             <column name="modelId" value="Samsung [M378A2K43DB1-CVF]">
@@ -173,7 +173,7 @@
             <column name="price" value="5199">
             </column>
         </insert>
-        <insert tableName="computer_accessories">
+        <insert tableName="hardware_catalogue">
             <column name="id" value="13">
             </column>
             <column name="modelId" value="MSI MAG B550M MORTAR WIFI">
@@ -185,7 +185,7 @@
             <column name="price" value="13499">
             </column>
         </insert>
-        <insert tableName="computer_accessories">
+        <insert tableName="hardware_catalogue">
             <column name="id" value="14">
             </column>
             <column name="modelId" value="Intel Core i9-11900KF BOX">
@@ -197,7 +197,7 @@
             <column name="price" value="38999">
             </column>
         </insert>
-        <insert tableName="computer_accessories">
+        <insert tableName="hardware_catalogue">
             <column name="id" value="15">
             </column>
             <column name="modelId" value="A-Data XPG GAMMIX D45 [AX4U36008G18I-DCBKD45]">
@@ -213,3 +213,4 @@
 
 
 </databaseChangeLog>
+

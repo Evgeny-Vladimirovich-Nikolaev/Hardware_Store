@@ -16,7 +16,6 @@ public interface RoleMapper {
     @Mapping(target = "user", source = "role.user", ignore = true)
     RoleDto toDto(Role role);
 
-
     default List<RoleDto> toDtos(List<Role> entities) {
         return entities.stream().map(this::toDto).collect(Collectors.toList());
     }

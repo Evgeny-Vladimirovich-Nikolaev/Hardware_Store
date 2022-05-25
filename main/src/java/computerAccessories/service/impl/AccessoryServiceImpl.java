@@ -3,7 +3,6 @@ package computerAccessories.service.impl;
 import computerAccessories.dto.AccessoryDto;
 import computerAccessories.dto.AccessoryPageDto;
 import computerAccessories.mapper.AccessoryMapper;
-import computerAccessories.mapper.DescriptionMapper;
 import computerAccessories.model.Accessory;
 import computerAccessories.model.Description;
 import computerAccessories.repository.AccessoryRepository;
@@ -15,7 +14,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import java.util.List;
@@ -28,10 +26,7 @@ public class AccessoryServiceImpl implements AccessoryService {
 
     private final AccessoryRepository accessoryRepository;
     private final AccessoryMapper accessoryMapper;
-
     private final DescriptionRepository descriptionRepository;
-
-    private final DescriptionMapper descriptionMapper;
 
     @Override
     @Transactional(readOnly = true)
@@ -97,5 +92,6 @@ public class AccessoryServiceImpl implements AccessoryService {
         log.info("Удаляется модель с кодом {}", modelId);
         accessoryRepository.delete(accessoryRepository.findByModelId(modelId).orElseThrow());
     }
+
 }
 

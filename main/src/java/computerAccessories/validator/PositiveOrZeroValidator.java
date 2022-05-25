@@ -1,7 +1,6 @@
 package computerAccessories.validator;
 
 import lombok.RequiredArgsConstructor;
-
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
@@ -27,4 +26,5 @@ public class PositiveOrZeroValidator implements ConstraintValidator<PositiveOrZe
         }
         return true;
     }
+
 }

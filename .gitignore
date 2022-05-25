@@ -1,0 +1,8 @@
+/.idea
+/out
+/target
+*.iml
+*.gitignore
+db.properties
+docker-compose.yaml
+hibernate.cfg.xml

@@ -9,6 +9,7 @@ import java.lang.annotation.*;
 @Documented
 @Constraint(validatedBy = PositiveOrZeroValidator.class)
 public @interface PositiveOrZero {
+
     String message() default "";
 
     Class<?>[] groups() default {};
@@ -18,4 +19,5 @@ public @interface PositiveOrZero {
     String property() default "";
 
     int originValue() default -1;
+
 }

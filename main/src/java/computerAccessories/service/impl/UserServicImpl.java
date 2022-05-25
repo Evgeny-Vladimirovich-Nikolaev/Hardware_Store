@@ -33,4 +33,5 @@ public class UserServicImpl implements UserServic {
         userDto.setPassword(encrypt);
         return userMapper.toDto(userRepository.save(userMapper.toEntity(userDto)));
     }
+
 }

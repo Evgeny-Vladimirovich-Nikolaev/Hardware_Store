@@ -21,4 +21,5 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         return repository.findByLogin(login).map(UserPrincipal::new)
                 .orElseThrow(() -> new IllegalArgumentException("Пользователь с логином " + login + " не найден"));
     }
+
 }
