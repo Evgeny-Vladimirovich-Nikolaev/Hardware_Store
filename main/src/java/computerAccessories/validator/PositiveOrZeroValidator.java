@@ -19,7 +19,7 @@ public class PositiveOrZeroValidator implements ConstraintValidator<PositiveOrZe
         final int i = this.annotation.originValue();
         if (value < 0) {
             context.disableDefaultConstraintViolation();
-            context.buildConstraintViolationWithTemplate("Возникла ошибка проверки значения")
+            context.buildConstraintViolationWithTemplate("Value validation error occurred")
                     .addPropertyNode(annotation.property())
                     .addConstraintViolation();
             return false;

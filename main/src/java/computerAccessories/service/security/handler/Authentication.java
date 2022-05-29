@@ -17,12 +17,12 @@ public class Authentication implements AuthenticationSuccessHandler, Authenticat
 
     @Override
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
-        log.error("Проблема во время аутентификации");
+        log.error("Authentication failed");
     }
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, org.springframework.security.core.Authentication authentication) throws IOException, ServletException {
-        log.info("Аутентификация прошла успешно");
+        log.info("Authentication successful");
     }
 
     @Override
