@@ -14,7 +14,7 @@
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
-            <column name="description" type="VARCHAR(3072)">
+            <column name="description" type="TEXT">
                 <constraints nullable="false"/>
             </column>
         </createTable>
